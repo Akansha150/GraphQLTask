@@ -1,0 +1,21 @@
+{
+  wishlist {
+    items_count
+    name
+    sharing_code
+    updated_at
+    items {
+      id
+      qty
+      description
+      added_at
+      product {
+        id
+        sku
+        name
+        product_url
+      }
+    }
+  }
+}
+
