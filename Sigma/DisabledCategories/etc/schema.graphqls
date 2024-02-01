@@ -1,0 +1,9 @@
+type Query {
+    disabledCategoriesNotInMenu: [SigmaCategory] @resolver(class: "Sigma\\DisabledCategories\\Model\\Resolver\\DisabledCategoriesNotInMenu") @doc(description: "Get a list of disabled categories not included in the menu.")
+}
+
+type SigmaCategory {
+    name: String
+    description: String
+    imageUrl: String
+}
