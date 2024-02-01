@@ -1,0 +1,3 @@
+interface ProductInterface {
+    product_url: String @doc(description: "Name of attribute set assigned to the product") @resolver(class: "\\Sigma\\WishlistOverride\\Model\\Resolver\\UrlResolver")
+}
