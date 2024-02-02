@@ -1,0 +1,18 @@
+type Query {
+    CustomCustomerCreate (
+        firstname: String! @doc(description: "Customer First"),
+        lastname: String! @doc(description: "Last Name"),
+        email: String! @doc(description: "Email"),
+        password: String! @doc(description: "Password"),
+        confirm_password: String! @doc(description: "Confirm Password")
+    ): [CustomCustomerResolver]
+    @resolver(class: "\\Sigma\\CreateCustomer\\Model\\Resolver\\CreateCustomerCreate") @doc(description: "Customer Create Query")
+}
+
+type CustomCustomerResolver @doc(description: "An input object for creating a customer.") {
+    firstname: String @doc(description: "The customer's first name.")
+    lastname: String @doc(description: "The customer's last name.")
+    email: String @doc(description: "The customer's email address.")
+    customer_id: Int @doc(description: "The customer's id.")
+    message: String! @doc(description: "Message success")
+}

@@ -1,0 +1,10 @@
+
+FILE: /var/www/html/taskdemo/app/code/Sigma/CreateCustomer/etc/schema.graphqls
+----------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------------------------------------------------------------------------------
+ 1 | ERROR | An error occurred during processing; checking has been aborted. The error message was: Syntax Error: Cannot parse the unexpected
+   |       | character "\/".
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
