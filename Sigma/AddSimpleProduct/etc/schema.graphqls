@@ -1,0 +1,46 @@
+type Mutation {
+    createSimpleProductCustom(
+    input: CreateProductSimpleInput! @doc(description: "An input object that contains the details necessary to create a product.")
+    ): CreateProductSimpleOutput! @doc(description: "Create a product for the specified details.") @resolver(class: "\\Sigma\\AddSimpleProduct\\Model\\Resolver\\AddSimpleProduct")
+}
+
+input CreateProductSimpleInput @doc(description: "Defines a new product.") {
+    name: String! @doc(description: "The name of the product.")
+    sku: String! @doc(description: "The SKU of the product.")
+    status: Boolean! @doc(description: "The status of the product.")
+    visibility: Int! @doc(description: "The visibility of the product.")
+    price: Float! @doc(description: "The price of the product.")
+    stock_data: ProductStockInput! @doc(description: "Stock data for the product.")
+    tier_prices: [TierPriceInput] @doc(description: "Tier prices for the product.")
+    special_price: ProductSpecialInput @doc(description: "Special price for the product.")
+}
+
+input ProductStockInput @doc(description: "Stock data for the product.") {
+    use_config_manage_stock: Int
+    manage_stock: Int
+    min_sale_qty: Float
+    max_sale_qty: Float
+    is_in_stock: Boolean!
+    qty: Float!
+}
+
+input ProductSpecialInput @doc(description: "Special price for the product.") {
+    special_price: Float!
+    special_from_date: String!
+    special_to_date: String!
+
+}
+
+input TierPriceInput @doc(description: "Tier price details for the product.") {
+    customer_group_id: Int! @doc(description: "Customer group ID for the tier price. 32000-allgroup 0-Notloggedin 1-General 2-Wholesale 3-Retailer ")
+    qty: Float! @doc(description: "Minimum quantity for the tier price.")
+    value: Float! @doc(description: "Price value for the tier price.")
+}
+
+type CreateProductSimpleOutput @doc(description: "Contains the completed product details.") {
+    product_id: Int!
+    name: String! @doc(description: "Product details.")
+    sku: String! @doc(description: "Product details.")
+    qty: Int!
+    url: String!
+}
