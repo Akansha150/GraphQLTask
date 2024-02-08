@@ -146,11 +146,36 @@ class AddSimpleProduct implements ResolverInterface
                 'is_in_stock' => $stockData['is_in_stock'],
                 'qty' => $stockData['qty'],
             ]);
+
+            if (!empty($stockData['use_config_manage_stock'])) {
+                $product->setStockData([
+                   'use_config_manage_stock' =>  $stockData['use_config_manage_stock']
+                ]);
+            }
+            if (!empty($stockData['manage_stock'])) {
+                $product->setStockData([
+                    'manage_stock' =>  $stockData['use_config_manage_stock']
+                ]);
+            }
+            if (!empty($stockData['min_sale_qty'])) {
+                $product->setStockData([
+                    'min_sale_qty' =>  $stockData['use_config_manage_stock']
+                ]);
+            }
+            if (!empty($stockData['max_sale_qty'])) {
+                $product->setStockData([
+                    'max_sale_qty' =>  $stockData['use_config_manage_stock']
+                ]);
+            }
             $product->setUrlKey($name . $sku);
 
             if (!empty($args['input']['special_price'])) {
                 $specialprice = $args['input']['special_price'];
                 $Format = 'dd/mm/yy';
+                if ($specialprice['special_from_date'] > $specialprice['special_to_date']) {
+                    throw new GraphQlInputException(__("To date should be greater than form date"));
+                }
+
                 try {
                     $from = \DateTime::createFromFormat($Format, $specialprice['special_from_date']);
                     $to = \DateTime::createFromFormat($Format, $specialprice['special_to_date']);
