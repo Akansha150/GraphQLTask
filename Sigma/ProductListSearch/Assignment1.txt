@@ -1,0 +1,43 @@
+
+FILE: /var/www/html/magento1/app/code/Sigma/Graphql/Model/Resolver/ProductWithCategory.php
+-------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 5 WARNINGS AFFECTING 5 LINES
+-------------------------------------------------------------------------------------------------
+  95 | WARNING | Line exceeds 120 characters; contains 158 characters
+ 110 | WARNING | Direct throw of generic Exception is discouraged. Use context specific instead.
+ 112 | WARNING | Direct throw of generic Exception is discouraged. Use context specific instead.
+ 138 | WARNING | Line exceeds 120 characters; contains 157 characters
+ 173 | WARNING | Line exceeds 120 characters; contains 134 characters
+-------------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento1/app/code/Sigma/Graphql/Model/Resolver/ProductSearch.php
+------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 2 WARNINGS AFFECTING 1 LINE
+------------------------------------------------------------------------------------
+ 27 | WARNING | Comment block is missing
+ 27 | WARNING | Line exceeds 120 characters; contains 186 characters
+------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento1/app/code/Sigma/Graphql/Model/Resolver/UpdateProductStock.php
+-----------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+-----------------------------------------------------------------------------------------
+ 19 | WARNING | Comment block is missing
+-----------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento1/app/code/Sigma/Graphql/Model/Resolver/ProductList.php
+----------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 6 WARNINGS AFFECTING 6 LINES
+----------------------------------------------------------------------------------
+ 16 | WARNING | Missing PHP DocBlock for class property.
+ 17 | WARNING | Missing PHP DocBlock for class property.
+ 18 | WARNING | Missing PHP DocBlock for class property.
+ 19 | WARNING | Missing PHP DocBlock for class property.
+ 21 | WARNING | Comment block is missing
+ 33 | WARNING | Comment block is missing
+----------------------------------------------------------------------------------
+
+

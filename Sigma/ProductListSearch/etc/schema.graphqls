@@ -1,0 +1,21 @@
+
+type Product {
+  sku: String!
+  id: ID!
+  name: String!
+}
+
+type Query {
+  filterproducts(
+    pageSize: Int = 20,
+    currentPage: Int = 1,
+    category: Int,
+    minPrice: Float,
+    maxPrice: Float
+  ): Productdata! @resolver(class: "Sigma\\ProductListSearch\\Model\\Resolver\\ProductList")
+}
+
+type Productdata {
+  items: [Product!]!
+  itemcount: Int!
+}
