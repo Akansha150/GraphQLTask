@@ -1,0 +1,16 @@
+type Query {
+  productsAndCategories(sku: String!): ProductCategoryInfo! @resolver(class: "Sigma\\ProductCategoryGraphQl\\Model\\Resolver\\ProductsAndCategories") @doc(description: "Retrieve information about products and their associated categories.")
+}
+
+type ProductCategoryInfo {
+  id: Int!
+  name: String!
+  sku: String!
+  price: Float!
+  categories: [Category!]!
+}
+
+type Category {
+  id: Int! @doc(description: "The ID of the category.")
+  name: String! @doc(description: "The name of the category.")
+}
