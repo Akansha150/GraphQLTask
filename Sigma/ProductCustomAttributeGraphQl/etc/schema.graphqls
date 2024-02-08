@@ -1,0 +1,15 @@
+type ProductData {
+    id: ID!
+    sku: String!
+    name: String!
+    price: String!
+    material: String!
+    brand_logo: String!
+    launch_date: String!
+    belt_material: String
+    weight: Int!
+}
+
+type Query {
+    productCustomAttribute(sku: String!): ProductData @resolver(class: "Sigma\\ProductCustomAttributeGraphQl\\Model\\Resolver\\ProductDetailsCustomAttribute") @doc(description: "Get product details by SKU with associated category")
+}
